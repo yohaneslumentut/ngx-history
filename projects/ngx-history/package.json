@@ -1,0 +1,28 @@
+{
+  "name": "ngx-history",
+  "version": "0.0.1",
+  "description": "An Angular navigation history module.",
+  "keywords": [
+    "angular",
+    "navigation",
+    "history",
+    "ngx-history"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yohaneslumentut/ngx-history",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yohaneslumentut/ngx-history.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yohaneslumentut/ngx-history/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^11.0.1",
+    "@angular/core": "^11.0.1",
+    "@angular/router": "^11.0.1"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
