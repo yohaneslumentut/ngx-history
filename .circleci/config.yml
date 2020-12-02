@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@3.0.0
 jobs:
-  test:
+  deploy:
     working_directory: ~/ngx-history
     docker:
       - image: circleci/node:10-browsers
@@ -37,4 +37,4 @@ workflows:
           filters:
             branches:
               only:
-                -develop
+                - master
