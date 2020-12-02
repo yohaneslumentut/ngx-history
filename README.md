@@ -47,7 +47,7 @@ export class AppModule {
 }
 ```
 
-Once the module has been imported, you can easily use dependency injection to get an instance of `HistoryService`.
+Once the module has been imported, you can easily use dependency injection to get an instance of `HistoryService` and to initiate the history, call `history.init` at `AppComponent` constructor;
 
 ``` typescript
 import { Component } from '@angular/core';
@@ -61,7 +61,9 @@ export class AppComponent {
 
   constructor(
     public history: HistoryService
-  ) { }
+  ) {
+    history.init();
+  }
 }
 ```
 
@@ -87,4 +89,4 @@ export class AppComponent {
 ## Methods
   * `goBack()` - Navigate back
   * `goForward()` - Navigate forward
-  * `reset(path?: string)` - Reset navigation history
+  * `init(path?: string)` - Init navigation history

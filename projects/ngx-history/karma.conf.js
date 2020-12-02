@@ -36,7 +36,7 @@ module.exports = function (config) {
     restartOnFileChange: true,
     browsers: ['Chrome'],
     customLaunchers: {
-      ChromeHeadlessCI: {
+      ChromeNoSandbox: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox']
       }

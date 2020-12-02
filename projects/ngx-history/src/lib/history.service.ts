@@ -82,7 +82,7 @@ export class HistoryService implements OnDestroy {
     this.navigateByIndex(index);
   }
 
-  reset(path?: string): void {
+  init(path?: string): void {
     const initialRoute = path || this.paths[0];
     this.router.navigateByUrl(initialRoute).then(() => {
       this.paths = [initialRoute];
@@ -92,5 +92,9 @@ export class HistoryService implements OnDestroy {
       this.canGoForward = false;
       this.canGoBack = false;
     });
+  }
+
+  reset() {
+    this.init();
   }
 }

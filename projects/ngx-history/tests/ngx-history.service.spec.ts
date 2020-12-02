@@ -28,6 +28,9 @@ export class HomeComponent {
   template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
+  constructor(
+    public history: HistoryService
+  ) {}
 }
 
 export const routes: Routes = [
@@ -61,7 +64,6 @@ describe('NgxHistoryModule', () => {
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);
     history = TestBed.inject(HistoryService);
-
     fixture = TestBed.createComponent(AppComponent);
     router.initialNavigation();
   });
@@ -147,7 +149,8 @@ describe('NgxHistoryModule', () => {
     expect(history.canGoBack).toBeTrue();
   }));
 
-  it('reset method works', fakeAsync(() => {
+  it('init & reset method works', fakeAsync(() => {
+    history.init();
     router.navigate(['']);
     tick();
     router.navigate(['/about']);
@@ -159,7 +162,7 @@ describe('NgxHistoryModule', () => {
     expect(location.path()).toBe('/home');
     expect(history.canGoBack).toBeFalse();
     expect(history.canGoForward).toBeFalse();
-    history.reset('/contact');
+    history.init('/contact');
     tick();
     expect(location.path()).toBe('/contact');
     expect(history.canGoBack).toBeFalse();
