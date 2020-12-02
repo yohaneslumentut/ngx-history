@@ -1,5 +1,15 @@
 # ngx-history
 
+<a href="https://circleci.com/gh/yohaneslumentut/ngx-history/tree/master">
+  <img src="https://img.shields.io/circleci/build/github/yohaneslumentut/ngx-history.svg?logo=circleci&logoColor=fff&label=CircleCI" alt="CI status" />
+</a>&nbsp;
+<a href="https://www.npmjs.com/package/ngx-history">
+  <img src="https://img.shields.io/npm/v/ngx-history.svg?logo=npm&logoColor=fff&label=NPM+package&color=limegreen" alt="ngx-history on npm" />
+</a>&nbsp;
+<br>
+<br>
+<br>
+
 `ngx-history` is a small and simple service for [Angular](http://angular.io) which provides `canGoBack` and `canGoForward` detection easier.
 
 `ngx-history` is licensed under [MIT](https://opensource.org/licenses/MIT).
