@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test ngx-history",
     "lint": "ng lint ngx-history",
-    "test-ci": "ng lint ngx-history && ng test ngx-history --watch=false --no-progress --browsers=ChromeNoSandbox",
+    "test-ci": "ng lint ngx-history && ng test ngx-history --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox",
     "build-ci": "ng build ngx-history"
   },
   "private": true,
