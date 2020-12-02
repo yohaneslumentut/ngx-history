@@ -1,0 +1,41 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+jobs:
+  test:
+    working_directory: ~/ngx-history
+    docker:
+      - image: circleci/node:10-browsers
+      steps:
+        - checkout
+        - run:
+            name: Show current branch
+            command: echo ${CIRCLE_BRANCH}
+        - restore_cache:
+            keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+        - run:
+            name: Install local dependencies
+            command: npm install
+        - save_cache:
+            key: v1-dependencies-{{ checksum "package-lock.json" }}
+            paths:
+              - node_modules
+        - run:
+            name: Linting
+            command: npm run lint
+        - run:
+            name: Testing
+            command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+workflows:
+  version: 2
+  test_workflow:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - develop
+                - staging
+                - master
