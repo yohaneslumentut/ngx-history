@@ -33,8 +33,4 @@ workflows:
   version: 2
   default_workflow:
     jobs:
-        - deploy:
-            filters:
-              branches:
-                only:
-                  -develop
+      - test
