@@ -94,7 +94,7 @@ export class HistoryService implements OnDestroy {
     });
   }
 
-  reset() {
+  reset(): void {
     this.init();
   }
 }
