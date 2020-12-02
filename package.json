@@ -5,8 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint"
+    "test": "ng test ngx-history",
+    "lint": "ng lint ngx-history",
+    "test-ci": "ng lint ngx-history && ng test ngx-history --watch=false --browsers=ChromeHeadless",
+    "build-ci": "ng build ngx-history"
   },
   "private": true,
   "dependencies": {
