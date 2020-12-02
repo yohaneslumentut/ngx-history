@@ -32,10 +32,8 @@ workflows:
   version: 2
   test_workflow:
     jobs:
-      - deploy:
-          filters:
-            branches:
-              only:
-                - develop
-                - staging
-                - master
+        - deploy:
+            filters:
+              branches:
+                only:
+                  - master
