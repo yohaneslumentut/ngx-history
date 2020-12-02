@@ -28,12 +28,13 @@ jobs:
       - run:
           name: Testing
           command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+
 workflows:
   version: 2
-    test_workflow:
-      jobs:
-        - deploy:
-            filters:
-              branches:
-                only:
-                  - master
+  default_workflow:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                -develop
