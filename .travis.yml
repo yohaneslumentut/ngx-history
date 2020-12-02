@@ -1,18 +1,19 @@
+dist: trusty
+sudo: false
 language: node_js
+node_js:
+  - 'lts/erbium'
 addons:
-  chrome: stable
-branches:
-  only:
-    - master
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 cache:
   directories:
-    - node_modules
-notifications:
-  email: false
-node_js:
-  - '10.4.1'
-before_script:
-  - npm prune
+    - ./node_modules
+install:
+  - npm install
 script:
   - npm run test-ci
   - npm run build-ci
